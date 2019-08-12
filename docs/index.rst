@@ -62,3 +62,8 @@ reSTファイルの文章単位チェック
 
     $ jam docs/
 
+
+.. toctree::
+    :maxdepth: 1
+
+    contributing
