@@ -20,7 +20,10 @@ indent_size = 2
 indent_size = 4
 
 # Tab indentation (no size specified)
-[Makefile,setup.cfg]
+[Makefile]
+indent_style = tab
+
+[setup.cfg]
 indent_style = tab
 
 # Windows files
