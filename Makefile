@@ -2,7 +2,7 @@
 
 lint:
 	flake8 setup.py src/
-	doc8 docs/
+	doc8 docs/ specs/
 
 docs:
 	make -C docs html
