@@ -25,7 +25,7 @@
 
 ``reStructuredText`` で記述し、 ``Sphinx`` によるHTMLビルドされます。
 このフォルダのファイルのみに影響を与えるライブラリは、
-``extras_require`` の ``develop`` セクションに定義します。
+``extras_require`` の ``docs`` セクションに定義します。
 
 
 ``specs``

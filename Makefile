@@ -13,4 +13,4 @@ bump:
 	bumpversion ${VERSION}
 
 install-dev:
-	pip install -e '.[test,develop]'
+	pip install -e '.[test,docs,develop]'
