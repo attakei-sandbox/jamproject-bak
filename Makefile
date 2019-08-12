@@ -1,4 +1,7 @@
-.PHONY: install-dev bump
+.PHONY: install-dev lint bump
+
+lint:
+	flake8 setup.py src/
 
 VERSION=patch
 
@@ -6,4 +9,4 @@ bump:
 	bumpversion ${VERSION}
 
 install-dev:
-	pip install -e '.[develop]'
+	pip install -e '.[test,develop]'
