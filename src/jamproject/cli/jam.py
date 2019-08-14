@@ -7,7 +7,8 @@ import click
 
 @click.command()
 @click.version_option(message='JAMProject, version %(version)s')
-def cli():
+@click.argument('target', type=click.Path(exists=True))
+def cli(target: str):
     """CLI.
 
     - If version is flagged, print version string.
