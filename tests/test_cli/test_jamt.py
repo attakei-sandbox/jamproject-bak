@@ -10,5 +10,5 @@ def test_version():
     runner = CliRunner()
     result = runner.invoke(jamt.cli, ['--version'])
     assert result.exit_code == 0
-    assert 'JAM Project' in result.output
+    assert 'JAMProject' in result.output
     assert __version__ in result.output
