@@ -12,3 +12,17 @@ def test_version():
     assert result.exit_code == 0
     assert 'JAMProject' in result.output
     assert __version__ in result.output
+
+
+def test_verbose_behavior():
+    """Test -v/--verbose behavior.
+
+    - First, print version
+    """
+    runner = CliRunner()
+    result = runner.invoke(jamt.cli, ['-v', 'sample'])  # Example text
+    assert result.exit_code == 0
+    assert 'JAMProject' in result.output
+    assert __version__ in result.output
+    assert 'Target text' in result.output
+    assert 'sample' in result.output
