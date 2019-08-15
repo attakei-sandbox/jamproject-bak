@@ -26,3 +26,14 @@ def test_verbose_behavior():
     assert __version__ in result.output
     assert 'Target text' in result.output
     assert 'sample' in result.output
+
+
+def test_verbose_tokenizable_source():
+    """Test -v/--verbose behavior.
+
+    - First, print version
+    """
+    runner = CliRunner()
+    result = runner.invoke(jamt.cli, ['-v', '本日は晴天なり'])  # Example text
+    assert result.exit_code == 0
+    assert '本日,は,晴天,なり' in result.output

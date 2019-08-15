@@ -5,6 +5,7 @@ This command recieve raw text data and return result.
 import click
 
 from .. import __version__
+from ..core import TextUnit
 
 
 @click.command()
@@ -19,6 +20,9 @@ def cli(text, verbose):
     if verbose:
         click.echo(f'JAMProject {__version__}')
         click.echo(f'Target text: {text}')
+    unit = TextUnit(text)
+    if verbose:
+        click.echo(f'Tokens: {unit.splitted_text()}')
 
 
 def main():
