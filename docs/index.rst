@@ -66,4 +66,5 @@ reSTファイルの文章単位チェック
 .. toctree::
     :maxdepth: 1
 
+    skills/index
     contributing
