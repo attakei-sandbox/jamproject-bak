@@ -28,5 +28,6 @@ class TextUnit(object):
         """Token parts of raw text."""
         return self._tokens
 
-    def splitted_text(self, delimiter: str=',') -> str:
+    def splitted_text(self, delimiter: str = ',') -> str:
+        """Generate delimiter splitted text from tokens."""
         return delimiter.join([t.surface for t in self.tokens])
