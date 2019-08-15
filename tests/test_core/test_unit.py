@@ -13,3 +13,8 @@ def test_init_simple_ja_text():
     """"Test for basic behavior of class."""
     unit = TextUnit('本日は晴天なり')
     assert len(unit.tokens) == 4
+
+
+def test_splitted_text():
+    unit = TextUnit('本日は晴天なり')
+    assert unit.splitted_text() == '本日,は,晴天,なり'

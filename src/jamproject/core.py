@@ -27,3 +27,6 @@ class TextUnit(object):
     def tokens(self) -> List[Token]:
         """Token parts of raw text."""
         return self._tokens
+
+    def splitted_text(self, delimiter: str=',') -> str:
+        return delimiter.join([t.surface for t in self.tokens])
