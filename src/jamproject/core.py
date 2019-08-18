@@ -8,6 +8,8 @@ from janome.tokenizer import Token, Tokenizer
 
 tokenizer = Tokenizer()
 
+Tokens = List[Token]
+
 
 class TextUnit(object):
     """Unit component to manage text and analyze."""
@@ -16,7 +18,7 @@ class TextUnit(object):
         """In initializing, run tokenize."""
         self._raw_text: str = raw_text
         tokenized = tokenizer.tokenize(self.raw_text)
-        self._tokens: List[Token] = [t for t in tokenized]
+        self._tokens: Tokens = [t for t in tokenized]
 
     @property
     def raw_text(self) -> str:
@@ -24,7 +26,7 @@ class TextUnit(object):
         return self._raw_text
 
     @property
-    def tokens(self) -> List[Token]:
+    def tokens(self) -> Tokens:
         """Token parts of raw text."""
         return self._tokens
 
