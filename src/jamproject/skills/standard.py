@@ -16,5 +16,5 @@ def limit_toten(tokens: Tokens):
             self.msg = msg
     cnt_toten = len([t for t in tokens if t.surface == '、'])
     if cnt_toten > limit_toten:
-        return Result(f'読点（、）の数が多いです: 上限={limit_toten} 検出={cnt_toten}')
+        return Result(f'読点（、）の数が多いです。 期待数={limit_toten} 検出数={cnt_toten}')
     return Result('')
