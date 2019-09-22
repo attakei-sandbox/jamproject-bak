@@ -2,35 +2,16 @@
 
 標準利用されるスキルを管理するモジュールです
 """
-from jamproject.core import Tokens
 from ..core import TextUnit
-from . import (
-    SkillPassed,
-    SkillResult as SkillResultBase,
-    WARNING,
-)
+from . import SkillResult, WARNING
 
 
-class SkillResult(SkillResultBase):
-    """Skillで処理を行った結果
-    """
-    def __init__(self, message: str):
-        self._message = message
-
-    @property
-    def level(self):
-        return WARNING
-
-    @property
-    def message(self):
-        return self._message
-
-
-def limit_toten(unit: TextUnit):
+def limit_toten(unit: TextUnit) -> SkillResult:
     """読点の数が指定値以下であることを検査する。"""
     limit_toten = 2
 
     cnt_toten = len([t for t in unit.tokens if t.surface == '、'])
     if cnt_toten > limit_toten:
-        return SkillResult(f'読点（、）の数が多いです。 期待数={limit_toten} 検出数={cnt_toten}')
-    return SkillPassed()
+        msg = f'読点（、）の数が多いです。 期待数={limit_toten} 検出数={cnt_toten}'
+        return SkillResult.warning(msg)
+    return SkillResult.passed()
