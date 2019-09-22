@@ -3,9 +3,10 @@
 標準利用されるスキルを管理するモジュールです
 """
 from jamproject.core import Tokens
+from ..core import TextUnit
 
 
-def limit_toten(tokens: Tokens):
+def limit_toten(unit: TextUnit):
     """読点の数が指定値以下であることを検査する。"""
     limit_toten = 2
 
@@ -14,7 +15,7 @@ def limit_toten(tokens: Tokens):
 
         def __init__(self, msg):
             self.msg = msg
-    cnt_toten = len([t for t in tokens if t.surface == '、'])
+    cnt_toten = len([t for t in unit.tokens if t.surface == '、'])
     if cnt_toten > limit_toten:
         return Result(f'読点（、）の数が多いです。 期待数={limit_toten} 検出数={cnt_toten}')
     return Result('')
