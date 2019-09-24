@@ -3,7 +3,7 @@
 標準利用されるスキルを管理するモジュールです
 """
 from ..core import TextUnit
-from . import SkillResult, WARNING
+from . import SkillResult
 
 
 def limit_length(unit: TextUnit) -> SkillResult:
